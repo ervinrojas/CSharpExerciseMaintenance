@@ -13,7 +13,7 @@ namespace UnoSquare_Maintenance
         IWebDriver driver;
         public IWebDriver SetUpDriver()
         {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver("C:\\Windows\\WebDriver");
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             return driver;
@@ -30,15 +30,15 @@ namespace UnoSquare_Maintenance
         }
 
         #region Google Locators
-        By GoogleSearchBar = By.XPath("need maintenance");
-        By GoogleSearIcon = By.XPath("need maintenance");
-        By UnoSquareGoogleResult = By.XPath("need maintenance");
+        By GoogleSearchBar = By.XPath(".//input[@title='Buscar']");
+        By GoogleSearIcon = By.XPath("./html/body/div[1]/div[3]/form/div[1]/div[1]/div[2]/div[2]/div[5]/center/input[1]");
+        By UnoSquareGoogleResult = By.XPath(".//*[@id='rso']/div[1]/div/div/div/div/div/div/div[1]/a/h3");
         #endregion
 
         #region UnoSquare Locators
-        By UnoSquareServicesMenu = By.XPath("need maintenance");
-        By PracticeAreas = By.XPath("need maintenance");
-        By ContactUs = By.XPath("need maintenance");
+        By UnoSquareServicesMenu = By.XPath("./html/body/header/div/nav/a");
+        By PracticeAreas = By.XPath(".//*[@id='navbarSupportedContent']/ul/li[3]/a");
+        By ContactUs = By.XPath(".//*[@id='navbarSupportedContent']/ul/li[9]/a");
         #endregion 
         static void Main(string[] args)
         {
